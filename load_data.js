@@ -1,7 +1,7 @@
 (function(window){
 
   var urls = {
-    base: "https://hl7connect.healthintersections.com.au/svc/fhir",
+    base: "http://hl7connect.healthintersections.com.au/svc/fhir",
     lab_feed: "/labreport/search.xml?patient.subject.id={personId}&format=application/json",
     patient: "/person/@{personId}?format=application/json"
   },
