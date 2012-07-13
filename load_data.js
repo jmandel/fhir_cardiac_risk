@@ -35,7 +35,6 @@
       officialName = m(':has(.use:val("official"))', patient.Person.names)[0],
       fname = m('.type:val("given")  ~ .value', officialName)[0],
       lname = m('.type:val("family") ~ .value', officialName)[0],
-      hscrp = m('.results > :has(.code:val("30522-7")) ', labs);
 
       by_loinc = function(loincs){
         var ret = [];
