@@ -30,7 +30,7 @@
       var patient = patient_result[0],
       labs = lab_result[0],
       gender = patient.Person.gender.text === 'F' ? "female" : "male",
-      dob = new XDate(patient.Person.dob),
+      dob = new XDate(patient.Person.dob.value),
       age = Math.floor(dob.diffYears(new XDate())),
       officialName = m(':has(.use:val("official"))', patient.Person.names)[0],
       fname = m('.type:val("given")  ~ .value', officialName)[0],
@@ -39,7 +39,7 @@
       by_loinc = function(loincs){
         var ret = [];
         $.each(arguments, function(i,l){
-          ret = ret.concat(m('.results > :has(.code:val("'+l+'")) ', labs));
+          ret = ret.concat(m('.result > :has(.code:val("'+l+'")) ', labs));
         });
         return ret;
       };
