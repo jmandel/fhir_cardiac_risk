@@ -32,7 +32,7 @@
       gender = patient.Person.gender.text === 'F' ? "female" : "male",
       dob = new XDate(patient.Person.dob.value),
       age = Math.floor(dob.diffYears(new XDate())),
-      officialName = m(':has(.use:val("official"))', patient.Person.names)[0],
+      officialName = m(':has(.use:val("official"))', patient.Person.name)[0],
       fname = m('.type:val("given")  ~ .value', officialName)[0],
       lname = m('.type:val("family") ~ .value', officialName)[0],
 
